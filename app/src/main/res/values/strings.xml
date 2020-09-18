@@ -5,7 +5,7 @@
     <string name="main_title">El Cafesíto</string>
     <string name="main_desc">El lugar ideal para pedir tus comidas sin hacer filas</string>
     <string name="main_button">Inicia Sesión</string>
-    <string name="main_about">Acerca de Nosotros</string>
+    <string name="main_about">Acerca Nosotros</string>
 
 <!--    Presentación-->
     <string name="presentation_university">Universidad Tecnológica de Panamá</string>
