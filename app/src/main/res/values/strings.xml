@@ -1,3 +1,40 @@
 <resources>
     <string name="app_name">Proyecto1</string>
+
+<!--    Main-->
+    <string name="main_title">El Cafesíto</string>
+    <string name="main_desc">El lugar ideal para pedir tus comidas sin hacer filas</string>
+    <string name="main_button">Inicia Sesión</string>
+    <string name="main_about">Acerca de Nosotros</string>
+
+<!--    Presentación-->
+    <string name="presentation_university">Universidad Tecnológica de Panamá</string>
+    <string name="presentation_faculty">Facultad de Ingeniería en Sistemas Computacionales</string>
+    <string name="presentation_subject">Herramienta de Programación IV</string>
+    <string name="presentation_project">Proyecto #1</string>
+    <string name="presentation_members">Integrantes:</string>
+    <string name="presentation_students">Edgar Gutierrez 8-123-123  \nRicardo Cuan     8-941-913</string>
+    <string name="presentation_teacher">Docente:</string>
+    <string name="presentation_teacher_name">Marlina Sánchez</string>
+    <string name="presentation_button">Volver al inicio</string>
+
+<!--    Login-->
+    <string name="login_title">Inicia Sesión</string>
+    <string name="login_user">Cédula</string>
+    <string name="login_password">Contraseña</string>
+    <string name="login_button">Inicia Sesión</string>
+
+<!--    Principal-->
+    <string name="principal_title">Has tu pedido</string>
+    <string name="principal_combo_title">Combo</string>
+    <string name="principal_single_title">¡Arma tu pedido!</string>
+    <string name="principal_button">Ver mi pedido</string>
+
+<!--    Result-->
+    <string name="result_title">Factura</string>
+    <string name="result_date">Fecha: </string>
+    <string name="result_time">Hora: </string>
+    <string name="result_total">Total: B/.</string>
+    <string name="result_code">Código: </string>
+    <string name="result_button">Agregar más cómida</string>
 </resources>
