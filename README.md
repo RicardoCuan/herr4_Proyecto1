@@ -22,8 +22,23 @@
 
 ## Tareas
 
-1. -[ ] Escoger un nombre
-2. -[ ] Paleta de colores
-3. -[ ] Login
-4. -[ ] Principal
-5. -[ ] Checkout
+1. Diseño
+   1. -[x] Escoger un nombre
+   2. -[x] Paleta de colores
+   3. -[x] Pantallas
+2. Maquetación
+   1. -[ ] Presentacion
+   2. -[ ] Landing
+   3. -[ ] Iniciar Sesión
+   4. -[ ] Principal
+   5. -[ ] Factura
+3. Funcionalidad
+   1. -[ ] Presentacion
+   2. -[ ] Landing
+   3. -[ ] Iniciar Sesión
+   4. -[ ] Principal
+   5. -[ ] Factura
+
+## Diseño
+
+![UI del proyecto](https://i.imgur.com/geH14qG.png)
