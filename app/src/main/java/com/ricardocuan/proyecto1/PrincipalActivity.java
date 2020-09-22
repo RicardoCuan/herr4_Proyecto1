@@ -11,4 +11,10 @@ public class PrincipalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_principal);
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
+
 }
