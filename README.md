@@ -27,9 +27,9 @@
    2. -[x] Paleta de colores
    3. -[x] Pantallas
 2. Maquetación
-   1. -[ ] Presentacion
-   2. -[ ] Landing
-   3. -[ ] Iniciar Sesión
+   1. -[X] Presentacion
+   2. -[X] Landing
+   3. -[X] Iniciar Sesión
    4. -[ ] Principal
    5. -[ ] Factura
 3. Funcionalidad
