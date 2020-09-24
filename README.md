@@ -32,15 +32,25 @@
         1. -[ ] Subrayado al "Acerca de nosotros"
    3. -[X] Iniciar Sesión
    4. -[ ] Principal
+        1. -[ ] Card de Combos
+        2. -[ ] Card de Individual
+        3. -[ ] Ranking Star
    5. -[ ] Factura
-   6. -[ ] Bordes al botón principal
+   6. -[ ] Global
+        1. -[ ] Bordes al botón principal
 3. Funcionalidad
-   1. -[ ] Presentacion
-   2. -[ ] Landing
+   1. -[X] Presentacion
+   2. -[X] Landing
    3. -[ ] Iniciar Sesión
+        1. -[ ] Validaciones de Formulario
    4. -[ ] Principal
+        1. -[ ] Contador
+        2. -[ ] Anuimación del Botón 
+        3. -[ ] Calcular el total
    5. -[ ] Factura
+        1. -[ ] Generador de Código
+        2. -[ ] Display de Resultados
 
 ## Diseño
 
-![UI del proyecto](https://i.imgur.com/geH14qG.png)
+![UI del proyecto](https://i.imgur.com/VVhcrpQ.png)
