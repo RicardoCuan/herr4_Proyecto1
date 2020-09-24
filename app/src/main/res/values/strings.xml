@@ -25,25 +25,16 @@
     <string name="login_button">Inicia Sesión</string>
 
     <!--    Principal-->
-    <string name="principal_title">Has tu pedido</string>
+    <string name="principal_title">Has tu pedido 💜</string>
     <string name="principal_combo_title">Combo</string>
     <string name="principal_single_title">¡Arma tu pedido!</string>
     <string name="principal_button">Ver mi pedido</string>
 
     <!--    Result-->
-    <string name="result_title">Factura</string>
+    <string name="result_title">Mi Pedido</string>
     <string name="result_date">Fecha:</string>
     <string name="result_time">Hora:</string>
-    <string name="result_total">Total: B/.</string>
+    <string name="result_total">Total:</string>
     <string name="result_code">Código:</string>
     <string name="result_button">Agregar más cómida</string>
-    <string name="title_activity_login2">Log In</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
 </resources>
