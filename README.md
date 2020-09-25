@@ -32,10 +32,10 @@
         1. -[ ] Subrayado al "Acerca de nosotros"
    3. -[X] Iniciar Sesión
    4. -[ ] Principal
-        1. -[ ] Card de Combos
+        1. -[X] Card de Combos
         2. -[ ] Card de Individual
         3. -[ ] Ranking Star
-   5. -[ ] Factura
+   5. -[X] Factura
    6. -[ ] Global
         1. -[ ] Bordes al botón principal
 3. Funcionalidad
