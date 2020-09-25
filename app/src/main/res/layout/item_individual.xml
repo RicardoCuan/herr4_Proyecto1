@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:background="@color/colorLight"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+<!--        IMAGE-->
+        <ImageView
+                android:background="#34b4eb"
+                android:id="@+id/individual_image"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+<!--        TITLE-->
+        <TextView
+                android:id="@+id/individual_title"
+                android:text="Arroz con pollo, ensalada de papas y chicha de naranja"
+                android:textColor="@color/colorDark"
+                android:textSize="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/individual_image"/>
+
+<!--        COST-->
+        <TextView
+                android:id="@+id/individual_cost"
+                android:text="B/. 0.50"
+                android:textColor="@color/colorDark"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/individual_minus"
+                app:layout_constraintBottom_toBottomOf="@+id/individual_minus"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+<!--        STARS-->
+        <LinearLayout
+                android:background="#fcc203"
+                android:layout_width="130dp"
+                android:layout_height="20dp"
+                app:layout_constraintTop_toTopOf="@+id/individual_cost"
+                app:layout_constraintBottom_toBottomOf="@+id/individual_cost"
+                app:layout_constraintStart_toEndOf="@+id/individual_cost"
+                app:layout_constraintEnd_toStartOf="@+id/individual_minus">
+
+        </LinearLayout>
+
+<!--        MINUS-->
+        <LinearLayout
+                android:id="@+id/individual_minus"
+                android:background="#d90f0f"
+                android:gravity="center"
+                android:layout_marginRight="20dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:layout_constraintTop_toTopOf="@+id/individual_quantity"
+                app:layout_constraintBottom_toBottomOf="@+id/individual_quantity"
+                app:layout_constraintEnd_toStartOf="@+id/individual_quantity">
+
+                <ImageView
+                        android:src="@drawable/item_minus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+<!--        QUANTITY-->
+        <LinearLayout
+                android:id="@+id/individual_quantity"
+                android:background="#0ca803"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:layout_constraintTop_toBottomOf="@+id/individual_title"
+                app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                    android:id="@+id/individual_quantity_text"
+                    android:text="5"
+                    android:textSize="24dp"
+                    android:textColor="@color/colorLight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

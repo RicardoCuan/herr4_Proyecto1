@@ -8,9 +8,7 @@
         android:layout_height="match_parent"
         tools:context=".ResultActivity">
 
-
     <!-- Header -->
-
     <ImageView
             android:id="@+id/result_arrow"
             android:src="@drawable/left_arrow"
@@ -40,8 +38,8 @@
             android:text="@string/result_date"
             android:textColor="@color/colorDark"
             android:textStyle="bold"
-            android:textSize="20dp"
-            android:layout_marginTop="40dp"
+            android:textSize="16dp"
+            android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -52,12 +50,12 @@
             android:id="@+id/result_date_text"
             android:text="3/10/2020"
             android:textColor="@color/colorDark"
-            android:textSize="20dp"
-            android:layout_marginTop="40dp"
+            android:textSize="16dp"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/result_title"
+            app:layout_constraintTop_toTopOf="@+id/result_date"
+            app:layout_constraintBottom_toBottomOf="@+id/result_date"
             app:layout_constraintStart_toEndOf="@id/result_date"/>
 
     <TextView
@@ -65,8 +63,8 @@
             android:text="@string/result_time"
             android:textColor="@color/colorDark"
             android:textStyle="bold"
-            android:textSize="20dp"
-            android:layout_marginTop="20dp"
+            android:textSize="16dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -77,16 +75,26 @@
             android:id="@+id/result_time_text"
             android:text="4:23 P.M."
             android:textColor="@color/colorDark"
-            android:textSize="20dp"
-            android:layout_marginTop="20dp"
+            android:textSize="16dp"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/result_date"
+            app:layout_constraintTop_toTopOf="@+id/result_time"
             app:layout_constraintStart_toEndOf="@id/result_time"/>
 
-    <!-- Footer-->
 
+    <!-- Lista -->
+    <ListView
+            android:id="@+id/result_list"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/result_time"
+            app:layout_constraintBottom_toTopOf="@+id/result_total"/>
+
+
+    <!-- Footer-->
     <TextView
             android:id="@+id/result_total"
             android:text="@string/result_total"
@@ -98,14 +106,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toStartOf="@+id/result_total_text"
-            app:layout_constraintBottom_toTopOf="@+id/code_layout"/>
+            app:layout_constraintTop_toTopOf="@+id/result_total_text"/>
 
     <TextView
             android:id="@+id/result_total_text"
             android:text="B/. 34.25"
             android:textColor="@color/colorDark"
             android:textSize="24dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="20dp"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
@@ -113,12 +121,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/code_layout"/>
 
-
     <LinearLayout
             android:id="@+id/code_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toTopOf="@+id/result_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
@@ -142,10 +149,12 @@
                 android:layout_height="wrap_content"/>
     </LinearLayout>
 
+
     <Button
             android:id="@+id/result_button"
             android:text="@string/result_button"
             style="@style/AppTheme.button"
+            android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>

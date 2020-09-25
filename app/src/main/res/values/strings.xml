@@ -26,8 +26,8 @@
 
     <!--    Principal-->
     <string name="principal_title">Has tu pedido 💜</string>
-    <string name="principal_combo_title">Combo</string>
-    <string name="principal_single_title">¡Arma tu pedido!</string>
+    <string name="principal_combo_title">Pide tu Combo 🍝</string>
+    <string name="principal_single_title">¡Arma tu combo! 🍛</string>
     <string name="principal_button">Ver mi pedido</string>
 
     <!--    Result-->
