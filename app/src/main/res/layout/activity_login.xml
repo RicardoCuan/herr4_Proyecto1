@@ -61,7 +61,7 @@
 
     <Button
             android:id="@+id/login_button"
-            android:text="@string/presentation_button"
+            android:text="@string/login_button"
             style="@style/AppTheme.button"
             app:layout_constraintTop_toBottomOf="@+id/login_password"
             android:layout_marginTop="60dp"
