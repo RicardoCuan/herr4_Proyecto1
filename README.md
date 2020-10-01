@@ -7,6 +7,7 @@
 3. [PDF: Pdf de las indicaciones](https://utpac-my.sharepoint.com/:b:/g/personal/marlina_sanchez_utp_ac_pa/EavaUmV1h4xCge9tQBkeWIMBVmXyijeRItGT0CBHonv67Q?e=fgN5aH)
 4. [GIT: Repositorio](https://github.com/RicardoCuan/herr4_Proyecto1)
 5. [WORD: Entregable de la parte escrita](https://utpac-my.sharepoint.com/:w:/g/personal/marlina_sanchez_utp_ac_pa/EedSZt5L3W1CrLwwhHHWg6IBMPKmCwZDxUTrOuPDV16A3g?e=sujsp9) 
+6. [EXCEL: Contenido a mostrar](https://utpac-my.sharepoint.com/:x:/g/personal/marlina_sanchez_utp_ac_pa/ER6WglDMMc5MvnEQsqccdOkB7fga_gFRVzE-fDFveWONMg?e=YPXClI)
 
 ## Información a tener en cuenta
 

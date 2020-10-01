@@ -5,7 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -17,6 +19,7 @@ public class PrincipalActivity extends AppCompatActivity {
     private ImageView principal_back;
     private ViewGroup combo_layout;
     private ViewGroup individual_layout;
+    private LinearLayout button_plus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,7 @@ public class PrincipalActivity extends AppCompatActivity {
         principal_back = findViewById(R.id.principal_arrow);
         combo_layout = (ViewGroup) findViewById(R.id.combo_list);
         individual_layout = (ViewGroup) findViewById(R.id.individual_list);
+        button_plus = findViewById(R.id.individual_layout_border);
 
         // On Click
         principal_button.setOnClickListener(new View.OnClickListener() {
@@ -54,10 +58,10 @@ public class PrincipalActivity extends AppCompatActivity {
         addCombo(4, "Arroz Con Pollo", 5, 1,1.75, 3);
 
         // INDIVIDUAL LIST
-        addIndividual(1, "Arroz Con Pollo", 5, 2,2.50, 3);
-        addIndividual(2, "Arroz Con Pollo", 5, 1,3.25, 3);
-        addIndividual(3, "Arroz Con Pollo", 5, 3,4.25, 3);
-        addIndividual(4, "Arroz Con Pollo", 5, 1,1.75, 3);
+        addIndividual(1, "Arroz Con Pollo", 2,2.50, 3);
+        addIndividual(2, "Arroz Con Pollo", 1,3.25, 3);
+        addIndividual(3, "Arroz Con Pollo", 3,4.25, 3);
+        addIndividual(4, "Arroz Con Pollo", 1,1.75, 3);
 
     }
 
@@ -65,6 +69,11 @@ public class PrincipalActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         finish();
+    }
+
+    public void onclick_individual_plus(View v) {
+        
+        System.out.println("BIG MAINKRAH");
     }
 
     private void addCombo(int id, String title, int image, int count, double cost, int stars) {
@@ -85,21 +94,20 @@ public class PrincipalActivity extends AppCompatActivity {
         combo_layout.addView(constraintLayout);
     }
 
-    private void addIndividual(int id, String title, int image, int count, double cost, int stars) {
+    private void addIndividual(int id, String title, int count, double cost, int stars) {
         LayoutInflater inflater = LayoutInflater.from(this);
         int id_layout = R.layout.item_individual;
 
-        ConstraintLayout constraintLayout = (ConstraintLayout) inflater.inflate(id_layout, null, false);
+        LinearLayout linearLayout = (LinearLayout) inflater.inflate(id_layout, null, false);
 
-        TextView tvcost     = (TextView)constraintLayout.findViewById(R.id.individual_cost);
-        TextView tvtitle    = (TextView)constraintLayout.findViewById(R.id.individual_title);
-//        ImageView tvimage = (ImageView)constraintLayout.findViewById(R.id.individual_image);
-        TextView tvquantity = (TextView)constraintLayout.findViewById(R.id.individual_quantity_text);
+        TextView tvcost     = (TextView)linearLayout.findViewById(R.id.individual_cost);
+        TextView tvtitle    = (TextView)linearLayout.findViewById(R.id.individual_title);
+        TextView tvquantity = (TextView)linearLayout.findViewById(R.id.individual_quantity);
 
         tvcost.setText("B/. " + cost);
-        tvquantity.setText("" + count);
+        tvquantity.setText("x" + count);
         tvtitle.setText(title);
 
-        individual_layout.addView(constraintLayout);
+        individual_layout.addView(linearLayout);
     }
 }

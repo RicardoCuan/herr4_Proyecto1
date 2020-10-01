@@ -79,8 +79,20 @@
                     android:textSize="30dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
                     android:layout_marginTop="80dp"
                     android:layout_marginLeft="20dp"/>
+            <TextView
+                    android:id="@id/individual_title"
+                    android:text="@string/principal_single_title"
+                    android:textColor="@color/colorDark"
+                    android:textSize="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="40dp"/>
+
             <LinearLayout
                     android:id="@+id/individual_list"
                     android:background="@color/colorLight"
@@ -104,7 +116,7 @@
 <!--     Botón Principal-->
     <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/principal_button_container"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/rounded_button_small"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
