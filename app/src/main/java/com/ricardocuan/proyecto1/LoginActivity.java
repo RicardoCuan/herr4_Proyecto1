@@ -2,9 +2,13 @@ package com.ricardocuan.proyecto1;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
@@ -12,39 +16,79 @@ public class LoginActivity extends AppCompatActivity {
     // Declaración de variables globales
     private Button login_button;
     private ImageView login_back;
+    EditText username;
+    EditText password;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+            username = findViewById(R.id.login_user);
+            password = findViewById(R.id.login_password);
+            login_button = findViewById(R.id.login_button);
+            login_back = findViewById(R.id.login_arrow);
+
         // Inicializar las variables
-        login_button = findViewById(R.id.login_button);
-        login_back = findViewById(R.id.login_arrow);
+
 
         // Button ON CLICK
         // Principal Button
-        login_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent principal_activity = new Intent(LoginActivity.this, PrincipalActivity.class);
-                startActivity(principal_activity);
-            }
-        });
 
-        // Back Button
-        login_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent main_activity = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(main_activity);
-            }
-        });
+            login_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent principal_activity = new Intent(LoginActivity.this, PrincipalActivity.class);
+                    startActivity(principal_activity);
+                    checkUsername();
+
+                }
+            });
+
+            // Back Button
+            login_back.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent main_activity = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(main_activity);
+
+                }
+            });
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         finish();
+    }
+
+    protected void checkUsername() {
+        boolean isValid = true;
+        if(isEmpty(username)){
+            username.setError("Ingresa un nombre de usuario");
+            isValid = false;
+        }
+        if (isEmpty(password)){
+            password.setError("Contrasena incorrecta");
+            isValid = false;
+        }
+        if (isValid){
+            String usernameValue = username.getText().toString();
+            String passwordValue = username.getText().toString();
+            if (usernameValue.equals("username1234") && passwordValue.equals("password1234")){
+                Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(i);
+                this.finish();
+            }else {
+                Toast t = Toast.makeText(this,  "Usuario o contrasena incorrectos", Toast.LENGTH_SHORT);
+                t.show();
+            }
+        }
+    }
+
+    boolean isEmpty(EditText text) {
+        CharSequence str = text.getText().toString();
+        return TextUtils.isEmpty(str);
     }
 }
