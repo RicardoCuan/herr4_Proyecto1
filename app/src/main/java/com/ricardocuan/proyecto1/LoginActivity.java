@@ -2,7 +2,9 @@ package com.ricardocuan.proyecto1;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,6 +31,8 @@ public class LoginActivity extends AppCompatActivity {
             password = findViewById(R.id.login_password);
             login_button = findViewById(R.id.login_button);
             login_back = findViewById(R.id.login_arrow);
+            username.addTextChangedListener(loginTextWatcher);
+            password.addTextChangedListener(loginTextWatcher);
 
         // Inicializar las variables
 
@@ -37,7 +41,8 @@ public class LoginActivity extends AppCompatActivity {
         // Principal Button
 
             login_button.setOnClickListener(new View.OnClickListener() {
-                @Override
+
+
                 public void onClick(View view) {
                     Intent principal_activity = new Intent(LoginActivity.this, PrincipalActivity.class);
                     startActivity(principal_activity);
@@ -55,7 +60,26 @@ public class LoginActivity extends AppCompatActivity {
 
                 }
             });
+
     }
+    private TextWatcher loginTextWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            String usernameInput = username.getText().toString().trim();
+            String passwordInput = password.getText().toString().trim();
+            login_button.setEnabled(!usernameInput.isEmpty() && !passwordInput.isEmpty());
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+
+        }
+    };
 
     @Override
     protected void onPause() {
@@ -65,6 +89,7 @@ public class LoginActivity extends AppCompatActivity {
 
     protected void checkUsername() {
         boolean isValid = true;
+
         if(isEmpty(username)){
             username.setError("Ingresa un nombre de usuario");
             isValid = false;
@@ -72,19 +97,29 @@ public class LoginActivity extends AppCompatActivity {
         if (isEmpty(password)){
             password.setError("Contrasena incorrecta");
             isValid = false;
+        }else {
+            if(password.getText().toString().length() < 4){
+                password.setError("Contrasena muy larga, maximo 4 caracteres");
+                isValid = false;
+            }
         }
+
         if (isValid){
             String usernameValue = username.getText().toString();
             String passwordValue = username.getText().toString();
             if (usernameValue.equals("username1234") && passwordValue.equals("password1234")){
-                Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                Intent i = new Intent(LoginActivity.this, PrincipalActivity.class);
                 startActivity(i);
                 this.finish();
+
             }else {
                 Toast t = Toast.makeText(this,  "Usuario o contrasena incorrectos", Toast.LENGTH_SHORT);
                 t.show();
             }
+
         }
+
+
     }
 
     boolean isEmpty(EditText text) {
