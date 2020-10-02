@@ -10,6 +10,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import com.ricardocuan.proyecto1.result.ResultData;
+
+import java.util.ArrayList;
 
 public class PrincipalActivity extends AppCompatActivity {
 
@@ -21,6 +24,9 @@ public class PrincipalActivity extends AppCompatActivity {
     private LinearLayout button_plus;
     private double total = 0;
     private TextView tvTotal;
+    private String[] data_cantidad = new String[50];
+    private String[] data_title = new String[50];
+    private String[] data_cost = new String[50];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +41,21 @@ public class PrincipalActivity extends AppCompatActivity {
         button_plus = findViewById(R.id.individual_layout_border);
         tvTotal = findViewById(R.id.principal_result);
 
+        for (int i = 0; i < 30; i++) {
+            data_cantidad[i] = "";
+            data_title[i] = "";
+            data_cost[i] = "";
+        }
 
         // On Click
         principal_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent principal_activity = new Intent(PrincipalActivity.this, ResultActivity.class);
+                principal_activity.putExtra("data_cantidad", data_cantidad);
+                principal_activity.putExtra("data_title", data_title);
+                principal_activity.putExtra("data_cost", data_cost);
+                principal_activity.putExtra("data_total", total);
                 startActivity(principal_activity);
             }
         });
@@ -53,12 +68,10 @@ public class PrincipalActivity extends AppCompatActivity {
             }
         });
 
-
         // COMBO LIST
         addCombo(1, "Arroz, arveja salchicha y ensalada básica", R.drawable.combo_1, 0.85, 3);
         addCombo(2, "Arroz, lenteja, pollo asado y ensalada de pepino", 5, 1.25, 3);
         addCombo(3, "Arroz poroto, pollo guisado", 5, 1.45, 3);
-
 
         // ARROZ LIST
         addTitle(1, "Arroz 🍚");
@@ -133,7 +146,7 @@ public class PrincipalActivity extends AppCompatActivity {
         individual_layout.addView(linearLayout);
     }
 
-    private void addCombo(int id, String title, int image, final double cost, int stars) {
+    private void addCombo(final int id, final String title, final int image, final double cost, final int stars) {
         LayoutInflater inflater = LayoutInflater.from(this);
         int id_layout = R.layout.item_combo;
 
@@ -141,8 +154,8 @@ public class PrincipalActivity extends AppCompatActivity {
 
         TextView tvcost     = (TextView)constraintLayout.findViewById(R.id.combo_cost);
         TextView tvtitle    = (TextView)constraintLayout.findViewById(R.id.combo_title);
-        ImageView tvimage = (ImageView)constraintLayout.findViewById(R.id.combo_image);
-        final TextView tvquantity = (TextView)constraintLayout.findViewById(R.id.combo_quantity);
+        ImageView tvimage   = (ImageView)constraintLayout.findViewById(R.id.combo_image);
+        final TextView tvquantity       = (TextView)constraintLayout.findViewById(R.id.combo_quantity);
         final LinearLayout minus_button = (LinearLayout)constraintLayout.findViewById(R.id.combo_minus);
         final LinearLayout plus_button  = (LinearLayout)constraintLayout.findViewById(R.id.combo_container);
 
@@ -172,6 +185,10 @@ public class PrincipalActivity extends AppCompatActivity {
                 tvTotal.setText("B/. " + total);
 
                 tvquantity.setText("x" + cantidad[0]);
+
+                data_cantidad[id] = cantidad[0]+"";
+                data_title[id] = title;
+                data_cost[id] = cost+"";
             }
         }));
 
@@ -189,13 +206,17 @@ public class PrincipalActivity extends AppCompatActivity {
                 total = total + cantidad[0] * cost;
                 tvquantity.setText("x" + cantidad[0]);
                 tvTotal.setText("B/. " + total);
+
+                data_cantidad[id] = cantidad[0]+"";
+                data_title[id] = title;
+                data_cost[id] = cost+"";
             }
         }));
 
         combo_layout.addView(constraintLayout);
     }
 
-    private void addIndividual(int id, String title, final double cost, int stars) {
+    private void addIndividual(final int id, final String title, final double cost, int stars) {
         LayoutInflater inflater = LayoutInflater.from(this);
         int id_layout = R.layout.item_individual;
 
@@ -234,6 +255,10 @@ public class PrincipalActivity extends AppCompatActivity {
                 tvTotal.setText("B/. " + total);
 
                 tvquantity.setText("x" + cantidad[0]);
+
+                data_cantidad[id] = cantidad[0]+"";
+                data_title[id] = title;
+                data_cost[id] = cost+"";
             }
         }));
 
@@ -251,6 +276,10 @@ public class PrincipalActivity extends AppCompatActivity {
                 total = total + cantidad[0] * cost;
                 tvquantity.setText("x" + cantidad[0]);
                 tvTotal.setText("B/. " + total);
+
+                data_cantidad[id] = cantidad[0]+"";
+                data_title[id] = title;
+                data_cost[id] = cost+"";
             }
         }));
 
