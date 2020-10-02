@@ -107,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
         if (isValid){
             String usernameValue = username.getText().toString();
             String passwordValue = username.getText().toString();
-            if (usernameValue.equals("a") && passwordValue.equals("")){
+            if (usernameValue.equals("8-123-123") && passwordValue.equals("12345")){
                 Intent i = new Intent(LoginActivity.this, PrincipalActivity.class);
                 startActivity(i);
                 this.finish();

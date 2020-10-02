@@ -64,12 +64,13 @@
             android:textColor="@color/colorDark"
             android:textStyle="bold"
             android:textSize="16dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginLeft="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/result_date"
-            app:layout_constraintEnd_toEndOf="@+id/result_date"/>
+            app:layout_constraintTop_toTopOf="@+id/result_date"
+            app:layout_constraintEnd_toStartOf="@id/result_time_text"
+    />
 
     <TextView
             android:id="@+id/result_time_text"
@@ -79,8 +80,10 @@
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@+id/result_time"
-            app:layout_constraintStart_toEndOf="@id/result_time"/>
+            android:layout_marginRight="30dp"
+            app:layout_constraintTop_toTopOf="@+id/result_date"
+            app:layout_constraintEnd_toEndOf="parent"
+    />
 
 
     <!-- Lista -->

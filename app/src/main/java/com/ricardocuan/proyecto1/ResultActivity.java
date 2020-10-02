@@ -11,6 +11,7 @@ import android.os.Bundle;
 import com.ricardocuan.proyecto1.result.ResultAdapter;
 import com.ricardocuan.proyecto1.result.ResultData;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -64,7 +65,7 @@ public class ResultActivity extends AppCompatActivity {
 
 
         // Total
-        tvTotal.setText("B/. " + data_total);
+        tvTotal.setText("B/. " + roundTwoDecimals(data_total));
         result_code.setText(code + "");
         result_date.setText(date + "");
         result_time.setText(time + "");
@@ -103,5 +104,10 @@ public class ResultActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         finish();
+    }
+
+    double roundTwoDecimals(double d) {
+        DecimalFormat twoDForm = new DecimalFormat("#.##");
+        return Double.valueOf(twoDForm.format(d));
     }
 }

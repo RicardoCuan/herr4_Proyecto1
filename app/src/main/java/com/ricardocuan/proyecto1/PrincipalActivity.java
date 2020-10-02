@@ -13,6 +13,7 @@ import android.os.Bundle;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import com.ricardocuan.proyecto1.result.ResultData;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class PrincipalActivity extends AppCompatActivity {
@@ -135,6 +136,11 @@ public class PrincipalActivity extends AppCompatActivity {
         finish();
     }
 
+    double roundTwoDecimals(double d) {
+        DecimalFormat twoDForm = new DecimalFormat("#.##");
+        return Double.valueOf(twoDForm.format(d));
+    }
+
     private void addTitle(int id, String title){
         LayoutInflater inflater = LayoutInflater.from(this);
         int id_layout = R.layout.item_title;
@@ -190,7 +196,7 @@ public class PrincipalActivity extends AppCompatActivity {
                 System.out.println("cantidad: " + cantidad[0]);
                 cantidad[0]++;
                 total = total + cantidad[0] * cost;
-                tvTotal.setText("B/. " + total);
+                tvTotal.setText("B/. " + roundTwoDecimals(total));
 
                 tvquantity.setText("x" + cantidad[0]);
 
@@ -214,7 +220,7 @@ public class PrincipalActivity extends AppCompatActivity {
 
                 total = total + cantidad[0] * cost;
                 tvquantity.setText("x" + cantidad[0]);
-                tvTotal.setText("B/. " + total);
+                tvTotal.setText("B/. " + roundTwoDecimals(total));
 
                 data_cantidad[id] = cantidad[0]+"";
                 data_title[id] = title;
@@ -264,7 +270,7 @@ public class PrincipalActivity extends AppCompatActivity {
                 System.out.println("cantidad: " + cantidad[0]);
                 cantidad[0]++;
                 total = total + cantidad[0] * cost;
-                tvTotal.setText("B/. " + total);
+                tvTotal.setText("B/. " + roundTwoDecimals(total));
 
                 tvquantity.setText("x" + cantidad[0]);
 
@@ -287,7 +293,7 @@ public class PrincipalActivity extends AppCompatActivity {
 
                 total = total + cantidad[0] * cost;
                 tvquantity.setText("x" + cantidad[0]);
-                tvTotal.setText("B/. " + total);
+                tvTotal.setText("B/. " + roundTwoDecimals(total));
 
                 data_cantidad[id] = cantidad[0]+"";
                 data_title[id] = title;
