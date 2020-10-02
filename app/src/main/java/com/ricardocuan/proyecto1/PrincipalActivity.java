@@ -7,11 +7,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import org.w3c.dom.Text;
 
 public class PrincipalActivity extends AppCompatActivity {
 
@@ -57,7 +55,7 @@ public class PrincipalActivity extends AppCompatActivity {
 
 
         // COMBO LIST
-        addCombo(1, "Arroz, arveja salchicha y ensalada básica", 5, 0.85, 3);
+        addCombo(1, "Arroz, arveja salchicha y ensalada básica", R.drawable.combo_1, 0.85, 3);
         addCombo(2, "Arroz, lenteja, pollo asado y ensalada de pepino", 5, 1.25, 3);
         addCombo(3, "Arroz poroto, pollo guisado", 5, 1.45, 3);
 
@@ -72,49 +70,49 @@ public class PrincipalActivity extends AppCompatActivity {
 
         // MINESTRA LIST
         addTitle(1, "Minestra 🍛");
-        addIndividual(1, "Lenteja",2.50, 3);
-        addIndividual(2, "Poroto",3.25, 3);
-        addIndividual(3, "Frijoles",4.25, 3);
-        addIndividual(4, "Arvejas",1.75, 3);
+        addIndividual(6, "Lenteja",2.50, 3);
+        addIndividual(7, "Poroto",3.25, 3);
+        addIndividual(8, "Frijoles",4.25, 3);
+        addIndividual(9, "Arvejas",1.75, 3);
 
         // PASTA LIST
         addTitle(1, "Pasta 🍜");
-        addIndividual(1, "Spaguetti",2.50, 3);
-        addIndividual(2, "Spaguetti con salsa",3.25, 3);
+        addIndividual(10, "Spaguetti",2.50, 3);
+        addIndividual(11, "Spaguetti con salsa",3.25, 3);
 
         // EMBUTIDO LIST
         addTitle(1, "Embutidos 🥓");
-        addIndividual(1, "Salchicha guisada",2.50, 3);
-        addIndividual(2, "Milanesa",3.25, 3);
-        addIndividual(3, "Nuggets",4.25, 3);
-        addIndividual(4, "Jamonilla frita",1.75, 3);
-        addIndividual(5, "Jamonilla guisada",1.75, 3);
+        addIndividual(12, "Salchicha guisada",2.50, 3);
+        addIndividual(13, "Milanesa",3.25, 3);
+        addIndividual(14, "Nuggets",4.25, 3);
+        addIndividual(15, "Jamonilla frita",1.75, 3);
+        addIndividual(16, "Jamonilla guisada",1.75, 3);
 
         // POLLOS LIST
         addTitle(1, "Pollos 🍗");
-        addIndividual(1, "Pollo Frito",2.50, 3);
-        addIndividual(2, "Pollo Asado",3.25, 3);
-        addIndividual(3, "Pollo Guisado",4.25, 3);
+        addIndividual(17, "Pollo Frito",2.50, 3);
+        addIndividual(18, "Pollo Asado",3.25, 3);
+        addIndividual(19, "Pollo Guisado",4.25, 3);
         
         // ENSALADA LIST
         addTitle(1, "Ensalada 🥗");
-        addIndividual(1, "Ensalada básica",2.50, 3);
-        addIndividual(2, "Coditos con tuna",3.25, 3);
-        addIndividual(3, "Ensalada de Lechuga y tomate",4.25, 3);
-        addIndividual(4, "Ensalada de papa",1.75, 3);
-        addIndividual(5, "Ensalada de pepino",1.75, 3);
-        addIndividual(6, "Ensalada papa roja",1.75, 3);
+        addIndividual(20, "Ensalada básica",2.50, 3);
+        addIndividual(21, "Coditos con tuna",3.25, 3);
+        addIndividual(22, "Ensalada de Lechuga y tomate",4.25, 3);
+        addIndividual(23, "Ensalada de papa",1.75, 3);
+        addIndividual(24, "Ensalada de pepino",1.75, 3);
+        addIndividual(25, "Ensalada papa roja",1.75, 3);
 
         // BEBIDAS LIST
         addTitle(1, "Bebidas 🥤");
-        addIndividual(1, "Chicha de Fruta",2.50, 3);
-        addIndividual(2, "Chicha de Piña",3.25, 3);
-        addIndividual(3, "Chicha de Naranja",4.25, 3);
+        addIndividual(26, "Chicha de Fruta",2.50, 3);
+        addIndividual(27, "Chicha de Piña",3.25, 3);
+        addIndividual(28, "Chicha de Naranja",4.25, 3);
 
         // POSTRES LIST
         addTitle(1, "Postres 🍦");
-        addIndividual(1, "Gelatina",2.50, 3);
-        addIndividual(2, "Flan",3.25, 3);
+        addIndividual(29, "Gelatina",2.50, 3);
+        addIndividual(30, "Flan",3.25, 3);
     }
 
     @Override
@@ -143,7 +141,7 @@ public class PrincipalActivity extends AppCompatActivity {
 
         TextView tvcost     = (TextView)constraintLayout.findViewById(R.id.combo_cost);
         TextView tvtitle    = (TextView)constraintLayout.findViewById(R.id.combo_title);
-//        ImageView tvimage = (ImageView)constraintLayout.findViewById(R.id.combo_image);
+        ImageView tvimage = (ImageView)constraintLayout.findViewById(R.id.combo_image);
         final TextView tvquantity = (TextView)constraintLayout.findViewById(R.id.combo_quantity);
         final LinearLayout minus_button = (LinearLayout)constraintLayout.findViewById(R.id.combo_minus);
         final LinearLayout plus_button  = (LinearLayout)constraintLayout.findViewById(R.id.combo_container);
@@ -151,7 +149,7 @@ public class PrincipalActivity extends AppCompatActivity {
         tvcost.setText("B/. " + cost);
         tvquantity.setText("");
         tvtitle.setText(title);
-
+        tvimage.setImageResource(R.drawable.combo_1);
 
         plus_button.setBackgroundResource(R.color.colorLight);
         minus_button.setVisibility(View.GONE);
