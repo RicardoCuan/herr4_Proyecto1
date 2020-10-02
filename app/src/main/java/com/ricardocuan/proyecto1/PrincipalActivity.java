@@ -135,20 +135,64 @@ public class PrincipalActivity extends AppCompatActivity {
         individual_layout.addView(linearLayout);
     }
 
-    private void addCombo(int id, String title, int image, double cost, int stars) {
+    private void addCombo(int id, String title, int image, final double cost, int stars) {
         LayoutInflater inflater = LayoutInflater.from(this);
         int id_layout = R.layout.item_combo;
 
-        ConstraintLayout constraintLayout = (ConstraintLayout) inflater.inflate(id_layout, null, false);
+        LinearLayout constraintLayout = (LinearLayout) inflater.inflate(id_layout, null, false);
 
         TextView tvcost     = (TextView)constraintLayout.findViewById(R.id.combo_cost);
         TextView tvtitle    = (TextView)constraintLayout.findViewById(R.id.combo_title);
 //        ImageView tvimage = (ImageView)constraintLayout.findViewById(R.id.combo_image);
-        TextView tvquantity = (TextView)constraintLayout.findViewById(R.id.combo_quantity_text);
+        final TextView tvquantity = (TextView)constraintLayout.findViewById(R.id.combo_quantity);
+        final LinearLayout minus_button = (LinearLayout)constraintLayout.findViewById(R.id.combo_minus);
+        final LinearLayout plus_button  = (LinearLayout)constraintLayout.findViewById(R.id.combo_container);
 
         tvcost.setText("B/. " + cost);
         tvquantity.setText("");
         tvtitle.setText(title);
+
+
+        plus_button.setBackgroundResource(R.color.colorLight);
+        minus_button.setVisibility(View.GONE);
+        tvquantity.setVisibility(View.GONE);
+
+        final int[] cantidad = {0};
+
+        plus_button.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (cantidad[0] == 0) {
+                    plus_button.setBackgroundResource(R.drawable.rounded_button_small);
+                    minus_button.setVisibility(View.VISIBLE);
+                    tvquantity.setVisibility(View.VISIBLE);
+                }
+                total = total - cantidad[0] * cost;
+                System.out.println("cantidad: " + cantidad[0]);
+                cantidad[0]++;
+                total = total + cantidad[0] * cost;
+                tvTotal.setText("B/. " + total);
+
+                tvquantity.setText("x" + cantidad[0]);
+            }
+        }));
+
+        minus_button.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                total = total - cantidad[0] * cost;
+                cantidad[0]--;
+                if (cantidad[0] == 0) {
+                    plus_button.setBackgroundResource(R.color.colorLight);
+                    minus_button.setVisibility(View.GONE);
+                    tvquantity.setVisibility(View.GONE);
+                }
+
+                total = total + cantidad[0] * cost;
+                tvquantity.setText("x" + cantidad[0]);
+                tvTotal.setText("B/. " + total);
+            }
+        }));
 
         combo_layout.addView(constraintLayout);
     }

@@ -1,111 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:background="@color/colorLight"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-            android:background="@color/colorLight"
-            android:layout_margin="10dp"
+    <LinearLayout
+            android:id="@+id/combo_container"
+            android:background="@drawable/rounded_button_small"
+            android:layout_margin="5dp"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content">
 
-        <!--        IMAGE-->
-        <ImageView
-                android:id="@+id/combo_image"
-                 android:background="@drawable/rounded_button_small"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-        <!--        TITLE-->
-        <TextView
-                android:id="@+id/combo_title"
-                android:text="Arroz con pollo, ensalada de papas y chicha de naranja"
-                android:textColor="@color/colorDark"
-                android:textSize="16dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:background="@drawable/rounded_button_card_back"
+                android:layout_margin="3dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/combo_image"/>
+                app:layout_constraintTop_toTopOf="parent">
 
-        <!--        COST-->
-        <TextView
-                android:id="@+id/combo_cost"
-                android:text="B/. 0.50"
-                android:textColor="@color/colorDark"
-                android:textSize="16dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="@+id/combo_minus"
-                app:layout_constraintBottom_toBottomOf="@+id/combo_minus"
-                app:layout_constraintStart_toStartOf="parent"/>
-
-        <!--        STARS-->
-        <LinearLayout
-                android:background="#fcc203"
-                android:layout_width="130dp"
-                android:layout_height="20dp"
-                app:layout_constraintTop_toTopOf="@+id/combo_cost"
-                app:layout_constraintBottom_toBottomOf="@+id/combo_cost"
-                app:layout_constraintStart_toEndOf="@+id/combo_cost"
-                app:layout_constraintEnd_toStartOf="@+id/combo_minus">
-
-        </LinearLayout>
-
-        <!--        MINUS-->
-        <LinearLayout
-                android:id="@+id/combo_minus"
-                android:background="#d90f0f"
-                android:gravity="center"
-                android:layout_marginRight="20dp"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                app:layout_constraintTop_toTopOf="@+id/combo_quantity"
-                app:layout_constraintBottom_toBottomOf="@+id/combo_quantity"
-                app:layout_constraintEnd_toStartOf="@+id/combo_quantity">
-
+            <!--        IMAGE-->
             <ImageView
-                    android:src="@drawable/item_minus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-        </LinearLayout>
+                    android:id="@+id/combo_image"
+                    android:background="@drawable/rounded_button_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-
-        <!--        QUANTITY-->
-        <LinearLayout
-                android:id="@+id/combo_quantity"
-                android:background="#0ca803"
-                android:gravity="center"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="20dp"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                app:layout_constraintTop_toBottomOf="@+id/combo_title"
-                app:layout_constraintEnd_toEndOf="parent">
-
-            <ImageView
-                    android:src="@drawable/main_circle"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"/>
-
+            <!--        TITLE-->
             <TextView
-                    android:id="@+id/combo_quantity_text"
-                    android:text="5"
-                    android:textSize="24dp"
-                    android:textColor="@color/colorLight"
+                    android:id="@+id/combo_title"
+                    android:text="Arroz con pollo, ensalada de papas y chicha de naranja"
+                    android:textColor="@color/colorDark"
+                    android:textSize="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/combo_image"/>
+
+            <!--        COST-->
+            <TextView
+                    android:id="@+id/combo_cost"
+                    android:text="B/. 0.50"
+                    android:textColor="@color/colorDark"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-        </LinearLayout>
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/combo_title"
+                    app:layout_constraintStart_toStartOf="parent"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--        STARS-->
+            <LinearLayout
+                    android:background="#fcc203"
+                    android:layout_width="130dp"
+                    android:layout_height="20dp"
+                    app:layout_constraintTop_toTopOf="@+id/combo_cost"
+                    app:layout_constraintBottom_toBottomOf="@+id/combo_cost"
+                    app:layout_constraintStart_toEndOf="@+id/combo_quantity"
+                    app:layout_constraintEnd_toStartOf="@+id/combo_minus">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+
+
+            <!-- MINUS-->
+            <LinearLayout
+                    android:id="@+id/combo_minus"
+                    android:background="@drawable/circle_purple"
+                    android:visibility="visible"
+                    android:gravity="center"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    app:layout_constraintTop_toTopOf="@id/combo_cost"
+                    app:layout_constraintBottom_toBottomOf="@id/combo_cost"
+                    app:layout_constraintEnd_toEndOf="parent"
+            >
+
+                <ImageView
+                        android:src="@drawable/item_minus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+            <!--        QUANTITY-->
+            <TextView
+                    android:id="@+id/combo_quantity"
+                    android:textColor="@color/colorDark"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="x1"
+                    android:textSize="18dp"
+                    android:gravity="center_horizontal"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintTop_toTopOf="@id/combo_cost"
+                    app:layout_constraintBottom_toBottomOf="@id/combo_cost"
+                    app:layout_constraintStart_toEndOf="@id/combo_cost"
+            />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</LinearLayout>
