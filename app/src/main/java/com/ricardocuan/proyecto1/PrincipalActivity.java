@@ -76,57 +76,57 @@ public class PrincipalActivity extends AppCompatActivity {
 
         // ARROZ LIST
         addTitle(1, "Arroz 🍚");
-        addIndividual(1, "Arroz Blanco",2.50, 3);
-        addIndividual(2, "Arroz Naranja",3.25, 3);
-        addIndividual(3, "Arroz con lenteja",4.25, 3);
-        addIndividual(4, "Arroz con colón",1.75, 3);
-        addIndividual(5, "Arroz con pollo",1.75, 3);
+        addIndividual(1, "Arroz Blanco",0.10, 4);
+        addIndividual(2, "Arroz Naranja",0.20, 3);
+        addIndividual(3, "Arroz con lenteja",0.20, 3);
+        addIndividual(4, "Arroz con colón",0.10, 1);
+        addIndividual(5, "Arroz con pollo",0.70, 5);
 
         // MINESTRA LIST
         addTitle(1, "Minestra 🍛");
-        addIndividual(6, "Lenteja",2.50, 3);
-        addIndividual(7, "Poroto",3.25, 3);
-        addIndividual(8, "Frijoles",4.25, 3);
-        addIndividual(9, "Arvejas",1.75, 3);
+        addIndividual(6, "Lenteja",0.25, 4);
+        addIndividual(7, "Poroto",0.25, 3);
+        addIndividual(8, "Frijoles",0.25, 3);
+        addIndividual(9, "Arvejas",0.25, 2);
 
         // PASTA LIST
         addTitle(1, "Pasta 🍜");
-        addIndividual(10, "Spaguetti",2.50, 3);
-        addIndividual(11, "Spaguetti con salsa",3.25, 3);
+        addIndividual(10, "Spaguetti",0.70, 4);
+        addIndividual(11, "Spaguetti con salsa",0.70, 5);
 
         // EMBUTIDO LIST
         addTitle(1, "Embutidos 🥓");
-        addIndividual(12, "Salchicha guisada",2.50, 3);
-        addIndividual(13, "Milanesa",3.25, 3);
-        addIndividual(14, "Nuggets",4.25, 3);
-        addIndividual(15, "Jamonilla frita",1.75, 3);
-        addIndividual(16, "Jamonilla guisada",1.75, 3);
+        addIndividual(12, "Salchicha guisada",0.25, 2);
+        addIndividual(13, "Milanesa",0.30, 1);
+        addIndividual(14, "Nuggets",0.70, 2);
+        addIndividual(15, "Jamonilla frita",0.25, 1);
+        addIndividual(16, "Jamonilla guisada",0.70, 2);
 
         // POLLOS LIST
         addTitle(1, "Pollos 🍗");
-        addIndividual(17, "Pollo Frito",2.50, 3);
-        addIndividual(18, "Pollo Asado",3.25, 3);
-        addIndividual(19, "Pollo Guisado",4.25, 3);
+        addIndividual(17, "Pollo Frito",0.80, 4);
+        addIndividual(18, "Pollo Asado",0.80, 5);
+        addIndividual(19, "Pollo Guisado",0.80, 4);
         
         // ENSALADA LIST
         addTitle(1, "Ensalada 🥗");
-        addIndividual(20, "Ensalada básica",2.50, 3);
-        addIndividual(21, "Coditos con tuna",3.25, 3);
-        addIndividual(22, "Ensalada de Lechuga y tomate",4.25, 3);
-        addIndividual(23, "Ensalada de papa",1.75, 3);
-        addIndividual(24, "Ensalada de pepino",1.75, 3);
-        addIndividual(25, "Ensalada papa roja",1.75, 3);
+        addIndividual(20, "Ensalada básica",0.20, 2);
+        addIndividual(21, "Coditos con tuna",0.70, 5);
+        addIndividual(22, "Ensalada de Lechuga y tomate",0.30, 3);
+        addIndividual(23, "Ensalada de papa",0.40, 4);
+        addIndividual(24, "Ensalada de pepino",0.40, 3);
+        addIndividual(25, "Ensalada papa roja",0.60, 4);
 
         // BEBIDAS LIST
         addTitle(1, "Bebidas 🥤");
-        addIndividual(26, "Chicha de Fruta",2.50, 3);
-        addIndividual(27, "Chicha de Piña",3.25, 3);
-        addIndividual(28, "Chicha de Naranja",4.25, 3);
+        addIndividual(26, "Chicha de Fruta",0.25, 2);
+        addIndividual(27, "Chicha de Piña",0.25, 2);
+        addIndividual(28, "Chicha de Naranja",0.25, 2);
 
         // POSTRES LIST
         addTitle(1, "Postres 🍦");
-        addIndividual(29, "Gelatina",2.50, 3);
-        addIndividual(30, "Flan",3.25, 3);
+        addIndividual(29, "Gelatina",0.70, 4);
+        addIndividual(30, "Flan",0.70, 4);
     }
 
     @Override

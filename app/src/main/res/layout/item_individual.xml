@@ -45,7 +45,6 @@
                 app:layout_constraintEnd_toStartOf="@+id/individual_stars"/>
 
         <!--    STARS-->
-
         <RatingBar
                 android:id="@+id/individual_stars"
                 android:layout_width="wrap_content"
