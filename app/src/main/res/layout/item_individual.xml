@@ -37,6 +37,7 @@
                 android:textSize="16dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
+                android:layout_marginRight="5dp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
@@ -44,19 +45,21 @@
                 app:layout_constraintEnd_toStartOf="@+id/individual_stars"/>
 
         <!--    STARS-->
-        <LinearLayout
+
+        <RatingBar
                 android:id="@+id/individual_stars"
-                android:background="#fcc203"
-                android:layout_width="130dp"
-                android:layout_height="20dp"
-                android:orientation="horizontal"
-                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/ratingBarStyleSmall"
+                android:progressTint="@color/colorStar"
+                android:numStars="5"
+                android:stepSize="1"
+                android:isIndicator="true"
+                android:layout_marginRight="20dp"
                 app:layout_constraintTop_toTopOf="@id/individual_title"
                 app:layout_constraintBottom_toBottomOf="@id/individual_title"
-                app:layout_constraintEnd_toStartOf="@id/individual_minus"
-                app:layout_constraintStart_toEndOf="@id/individual_title">
-
-        </LinearLayout>
+                app:layout_constraintEnd_toStartOf="@id/individual_cost"
+                app:layout_constraintStart_toEndOf="@id/individual_title" />
 
         <!-- MINUS-->
         <LinearLayout
@@ -66,10 +69,10 @@
                 android:gravity="center"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="5dp"
                 app:layout_constraintTop_toTopOf="@id/individual_title"
                 app:layout_constraintBottom_toBottomOf="@id/individual_title"
-                app:layout_constraintEnd_toStartOf="@id/individual_cost">
+                app:layout_constraintEnd_toEndOf="parent">
 
             <ImageView
                     android:src="@drawable/item_minus"
@@ -84,24 +87,26 @@
                 android:textColor="@color/colorDark"
                 android:textSize="16dp"
                 android:textStyle="bold"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="@+id/individual_title"
-                app:layout_constraintBottom_toBottomOf="@+id/individual_title"
+                app:layout_constraintTop_toTopOf="@id/individual_title"
+                app:layout_constraintBottom_toBottomOf="@id/individual_title"
                 app:layout_constraintEnd_toStartOf="@id/individual_quantity"/>
 
         <!-- QUANTITY-->
         <TextView
                 android:id="@+id/individual_quantity"
                 android:text="x5"
-                android:textSize="16dp"
+                android:textSize="20dp"
                 android:textColor="@color/colorDark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="@+id/individual_title"
-                app:layout_constraintBottom_toBottomOf="@+id/individual_title"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintTop_toTopOf="@id/individual_cost"
+                app:layout_constraintBottom_toBottomOf="@id/individual_cost"
+                app:layout_constraintEnd_toStartOf="@id/individual_minus"
                 />
 
 

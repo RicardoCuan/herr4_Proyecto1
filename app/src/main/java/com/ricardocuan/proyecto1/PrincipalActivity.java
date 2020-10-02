@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -147,33 +148,40 @@ public class PrincipalActivity extends AppCompatActivity {
     }
 
     private void addCombo(final int id, final String title, final int image, final double cost, final int stars) {
+        // Inflar el item_combo en el ScrollView
         LayoutInflater inflater = LayoutInflater.from(this);
         int id_layout = R.layout.item_combo;
 
         LinearLayout constraintLayout = (LinearLayout) inflater.inflate(id_layout, null, false);
 
+        // Declaración e inicialización de variables
+        RatingBar star      = (RatingBar)constraintLayout.findViewById(R.id.individual_stars);
         TextView tvcost     = (TextView)constraintLayout.findViewById(R.id.combo_cost);
         TextView tvtitle    = (TextView)constraintLayout.findViewById(R.id.combo_title);
         ImageView tvimage   = (ImageView)constraintLayout.findViewById(R.id.combo_image);
         final TextView tvquantity       = (TextView)constraintLayout.findViewById(R.id.combo_quantity);
-        final LinearLayout minus_button = (LinearLayout)constraintLayout.findViewById(R.id.combo_minus);
         final LinearLayout plus_button  = (LinearLayout)constraintLayout.findViewById(R.id.combo_container);
+        final LinearLayout minus_button = (LinearLayout)constraintLayout.findViewById(R.id.combo_minus);
+        final int[] cantidad = {0};
 
+        // Asignación
         tvcost.setText("B/. " + cost);
         tvquantity.setText("");
         tvtitle.setText(title);
         tvimage.setImageResource(R.drawable.combo_1);
+        star.setRating(stars);
 
+        // Estilos por default
         plus_button.setBackgroundResource(R.color.colorLight);
         minus_button.setVisibility(View.GONE);
         tvquantity.setVisibility(View.GONE);
 
-        final int[] cantidad = {0};
-
+        // OnClick - PLUS
         plus_button.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (cantidad[0] == 0) {
+                    // Estilo cuando está seleccionado
                     plus_button.setBackgroundResource(R.drawable.rounded_button_small);
                     minus_button.setVisibility(View.VISIBLE);
                     tvquantity.setVisibility(View.VISIBLE);
@@ -192,6 +200,7 @@ public class PrincipalActivity extends AppCompatActivity {
             }
         }));
 
+        // OnClick - MINUS
         minus_button.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -217,6 +226,8 @@ public class PrincipalActivity extends AppCompatActivity {
     }
 
     private void addIndividual(final int id, final String title, final double cost, int stars) {
+
+        // Inflar el scrollview con el item_individual.xml
         LayoutInflater inflater = LayoutInflater.from(this);
         int id_layout = R.layout.item_individual;
 
@@ -224,6 +235,7 @@ public class PrincipalActivity extends AppCompatActivity {
 
         TextView tvcost     = (TextView)linearLayout.findViewById(R.id.individual_cost);
         TextView tvtitle    = (TextView)linearLayout.findViewById(R.id.individual_title);
+        RatingBar star = (RatingBar)linearLayout.findViewById(R.id.individual_stars);
         final TextView tvquantity       = (TextView)linearLayout.findViewById(R.id.individual_quantity);
         final LinearLayout minus_button = (LinearLayout)linearLayout.findViewById(R.id.individual_minus);
         final LinearLayout plus_button  = (LinearLayout)linearLayout.findViewById(R.id.individual_layout_border);
@@ -232,7 +244,7 @@ public class PrincipalActivity extends AppCompatActivity {
         tvcost.setText("B/. " + cost);
         tvquantity.setText("");
         tvtitle.setText(title);
-
+        star.setRating(stars);
 
         plus_button.setBackgroundResource(R.color.colorLight);
         minus_button.setVisibility(View.GONE);

@@ -59,17 +59,19 @@
                     app:layout_constraintStart_toStartOf="parent"/>
 
             <!--        STARS-->
-            <LinearLayout
-                    android:background="#fcc203"
-                    android:layout_width="130dp"
-                    android:layout_height="20dp"
+            <RatingBar
+                    android:id="@+id/individual_stars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:progressTint="@color/colorStar"
+                    android:numStars="5"
+                    android:stepSize="1"
+                    android:isIndicator="true"
                     app:layout_constraintTop_toTopOf="@+id/combo_cost"
                     app:layout_constraintBottom_toBottomOf="@+id/combo_cost"
                     app:layout_constraintStart_toEndOf="@+id/combo_quantity"
-                    app:layout_constraintEnd_toStartOf="@+id/combo_minus">
-
-            </LinearLayout>
-
+                    app:layout_constraintEnd_toStartOf="@+id/combo_minus"/>
 
 
             <!-- MINUS-->

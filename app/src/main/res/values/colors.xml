@@ -7,4 +7,5 @@
     <color name="colorGray">#666666</color>
     <color name="colorDark">#22081E</color>
     <color name="colorLink">#1B62CD</color>
+    <color name="colorStar">#FFC800</color>
 </resources>
